@@ -2,6 +2,7 @@
 import { Module } from '@nestjs/common';
 import { UsuariosModule } from './Modules/Usuarios/usuarios.module';
 import { SequelizeModule } from '@nestjs/sequelize';
+import { TarefasModule } from './Modules/Tarefas/tarefas.module';
 
 @Module({
   imports: [SequelizeModule.forRoot
@@ -15,7 +16,8 @@ import { SequelizeModule } from '@nestjs/sequelize';
     autoLoadModels: true,
     synchronize: true
   }),
-  UsuariosModule],
+  UsuariosModule,
+  TarefasModule],
   controllers: [],
   providers: [],
 })
