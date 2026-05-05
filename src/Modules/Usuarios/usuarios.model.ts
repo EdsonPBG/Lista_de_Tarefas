@@ -1,5 +1,6 @@
 // usuarios.model.ts
-import { Column, DataType, Model, Table } from "sequelize-typescript";
+import { Column, DataType, HasMany, Model, Table } from "sequelize-typescript";
+import { Tarefas } from "../Tarefas/tarefas.model";
 
 @Table
 export class Usuarios extends Model
@@ -30,4 +31,7 @@ export class Usuarios extends Model
         allowNull: false
     })
     senha!: string
+
+    @HasMany(() => Tarefas)
+    tarefas!: Tarefas[]
 }
